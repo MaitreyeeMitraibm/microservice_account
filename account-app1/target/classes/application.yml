@@ -1,0 +1,46 @@
+server:
+  port: ${port:0}
+spring:
+  application:
+    name: account-app1
+  datasource:
+    url: jdbc:mysql://44.201.197.64:3307/hr
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+        defaultzone: http://localhost:8080/eureka
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    prefer-ip-address: true
+    ip-address: localhost
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - '*'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
